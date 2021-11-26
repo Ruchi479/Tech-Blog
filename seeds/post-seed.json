@@ -1,0 +1,27 @@
+[
+    {
+      "title": "Truth For Life",
+      "content": "Truth For Life's mission is to teach the Bible with clarity and relevance so that: Unbelievers will be converted. It is our desire that the preaching on Truth For Life would assist believers in their understanding of Scripture and the responsibilities of Christian living..",
+      "user_id": 1
+    },
+    {
+      "title": "Digital Inspiration",
+      "content": "This blog touches on various IT-related topics, from certain apps or websites to coding issues..",
+      "user_id": 2
+    },
+    {
+      "title": "Coding Horror",
+      "content": " It will be useful for students who are looking for answers to complex IT questions.",
+      "user_id": 3
+    },
+    {
+      "title": "Knowing and Doing",
+      "content": "A source in which a student in the U.S. publishes his notes on developments in software and its use in business.",
+      "user_id": 4
+    },
+    {
+      "title": "Time wasters",
+      "content": "Test Content E.You are surrounded by many time wasters that are continuously wasting your necessary time but don’t notice that you are in time theft. Time theft means a glance at the phone might seem harmless, but every time you check Facebook and other social media.",
+      "user_id": 3
+    }
+  ]
