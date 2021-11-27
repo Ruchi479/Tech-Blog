@@ -5,6 +5,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', async (req, res) => {
     try{
         const commentData = await Comment.findAll({
+            //join model user and post like left join
             include: [
                 {
                     model: User,
