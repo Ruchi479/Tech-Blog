@@ -1,7 +1,7 @@
 //import all models
 const User= require('./User');
-const User= require('./Post');
-const User= require('./Comment');
+const Post= require('./Post');
+const Comment= require('./Comment');
 
 //create association
 //user can make many posts

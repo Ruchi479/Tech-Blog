@@ -19,12 +19,22 @@ Post.init(
                 len: [1]
             }
         },
-        post_text: {
+        content: {
             type: DataTypes.TEXT,
             allowNull:false,
             validate: {
                 len: [1]
             }
+        },
+        created_at: {
+            type:DataTypes.DATE,
+            allowNull:false,
+            defaultValue: DataTypes.NOW, 
+        },
+        updated_at: {
+            type:DataTypes.DATE,
+            defaultValue: "",
+            onUpdate: DataTypes.NOW,
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -39,7 +49,7 @@ Post.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post'
+        modelName: 'Post'
     }
 );
 
