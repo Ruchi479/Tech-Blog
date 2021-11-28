@@ -5,8 +5,8 @@ const bcrypt = require('bcrypt');
 //create User model
 class User extends Model {
     //set up method to run on instance data(as per) to check password
-    checkPassword(loginPW){
-        return bcrypt.compareSync(loginPW, this.password);
+    checkPassword(signinPW){
+        return bcrypt.compareSync(signinPW, this.password);
     }
 }
 
@@ -22,15 +22,6 @@ User.init(
             type: DataTypes.STRING,
             allowNull:false,
             unique: true,
-        },
-
-        email: {
-            type: DataTypes.STRING,
-            allowNull:false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
         },
         password: {
             type: DataTypes.STRING,

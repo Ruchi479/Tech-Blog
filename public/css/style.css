@@ -1,7 +1,7 @@
 :root {
     --c-silver: #c6b4ad;
-    --c-dslategray: #2e3136;
-    --c-ddslategray: #1d1f22;
+    --c-dslategray: rgba(0, 0, 0, 0.747);
+    --c-ddslategray: maroon;
     --c-shadow: #644420;
     --c-lshadow: #90612b;
     --c-dwhitesmoke: #d6d0d0;

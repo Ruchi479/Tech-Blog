@@ -30,9 +30,9 @@
                     <li class='nav-item'><a class='nav-link' href='/dashboard'>Dashboard</a></li>
                 <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
-                <li class='nav-item'><a class='nav-link' id='btn-signout' href='/' rel='noreferrer noopener'>Log Out</a></li>
+                <li class='nav-item'><a class='nav-link' id='btn-signout' href='/' rel='noreferrer noopener'>Sign Out</a></li>
                 {{else}}
-                <li class='nav-item'><a class='nav-link' id='btn-signin' href='/login' rel='noreferrer noopener'>Log In</a></li>
+                <li class='nav-item'><a class='nav-link' id='btn-signin' href='/signin' rel='noreferrer noopener'>Sign In</a></li>
                 <li class='nav-item'><a class='nav-link' id='btn-signup' href='/signup' rel='noreferrer noopener'>Sign Up</a></li>
                 {{/if}}
             </ul>
@@ -64,7 +64,7 @@
     
     {{!-- Render script for signed in users only --}}
     {{#if logged_in}}
-    <script src="/js/logout.js"></script>
+    <script src="/js/signout.js"></script>
     {{/if}}
 
 <!--Scripts for Bootstrap-->
