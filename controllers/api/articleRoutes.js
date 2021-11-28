@@ -1,27 +1,32 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Article } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+//CREATE NEW Article
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newPost = await Post.create({
+    const newArticle = await Article.create({
       ...req.body,
+      //title: req.body.title,
+      // Article_content: req.body.Article_content,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newPost);
+    res.status(200).json(newArticle);
   } catch (err) {
       console.log(err);
     res.status(400).json(err);
   }
 });
 
+//UPDATE Article
 router.put('/:id', withAuth, async (req, res) => {
     try {
-        const postData = await Post.update(
+        const articleData = await Article.update(
             {
-                title: req.body.postTitle,
-                content: req.body.postContent,
+                title: req.body.articleTitle,
+                content: req.body.articleContent,
             },
             {
                 where: {
@@ -29,32 +34,33 @@ router.put('/:id', withAuth, async (req, res) => {
                 },
             },
         );
-        if(!postData){
-            res.status(404).json({message: 'No post found with this ID'});
+        if(!articleData){
+            res.status(404).json({message: 'No article found with this ID'});
             return;
         }
   
-        res.status(200).json(postData);
+        res.status(200).json(articleData);
     } catch (err) {
         console.log(err);
         res.status(400).json(err);
     }
 });
 
+//DELETE Article
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-        const postData = await Post.destroy({
+        const articleData = await Article.destroy({
         where: {
             id: req.params.id,
         },
         });
 
-        if (!postData) {
-        res.status(404).json({ message: 'No item found with this id!' });
+        if (!articleData) {
+        res.status(404).json({ message: 'No item(s) found with this id!' });
         return;
         }
 
-        res.status(200).json(postData);
+        res.status(200).json(articleData);
     } catch (err) {
         res.status(500).json(err);
     }

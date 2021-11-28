@@ -3,64 +3,65 @@ const { User } = require('../../models');
 const withAuth = require("../../utils/auth");
 
 //get/api/ all users
-router.post('/', async (req, res) => {
-  try {
-    const userData = await User.create(req.body);
+// router.post('/', async (req, res) => {
+//   try {
+//     const userData = await User.create(req.body);
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
+//     req.session.save(() => {
+//       req.session.user_id = userData.id;
+//       req.session.logged_in = true;
 
-      res.status(200).json(userData);
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+//       res.status(200).json(userData);
+//     });
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
-// GET /api/users/1
-router.get("/:id", async (req, res) => {
-  try {
-    const dbuserData = await User.findOne({
-      attributes: { exclude: ["password"] },
-      where: {
-        id: req.params.id,
-      },
-      include: [
-        {
-          model: Post,
-          attributes: ["id", "title", "post_content", "created_at", "updated_at"],
-        },
-        {
-          model: Comment,
-          attributes: ["id", "content", "created_at"],
-          include: {
-            model: Post,
-            attributes: ["title"],
-          },
-        },
-      ],
-    });
-    if (!dbUserData) {
-      res.status(404).json({ message: "No user found with this id" });
-      return;
-    }
-    res.status(200).json(dbUserData);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+// // GET /api/users/1
+// router.get("/:id", async (req, res) => {
+//   try {
+//     const dbuserData = await User.findOne({
+//       attributes: { exclude: ["password"] },
+//       where: {
+//         id: req.params.id,
+//       },
+//       include: [
+//         {
+//           model: Post,
+//           attributes: ["id", "title", "post_content", "created_at", "updated_at"],
+//         },
+//         {
+//           model: Comment,
+//           attributes: ["id", "content", "created_at"],
+//           include: {
+//             model: Post,
+//             attributes: ["title"],
+//           },
+//         },
+//       ],
+//     });
+//     if (!dbUserData) {
+//       res.status(404).json({ message: "No user found with this id" });
+//       return;
+//     }
+//     res.status(200).json(dbUserData);
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 //SIGNUP
 router.post('/signup', async (req, res) => {
   try {
-    const userData = await User.create({
-      //req.body
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
-    });
+    const userData = await User.create(req.body);
+    //   {
+    //   //req.body
+    //   username: req.body.username,
+    //   email: req.body.email,
+    //   password: req.body.password
+    // });
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -104,30 +105,31 @@ router.post('/login', async (req, res) => {
     });
 
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
 
 // PUT /api/users/1
-router.put("/:id", withAuth, async (req, res) => {
-  try {
-    const dbUserData = await User.update(req.body, {
-      individualHooks: true,
-      where: {
-        id: req.params.id,
-      },
-    });
+// router.put("/:id", withAuth, async (req, res) => {
+//   try {
+//     const dbUserData = await User.update(req.body, {
+//       individualHooks: true,
+//       where: {
+//         id: req.params.id,
+//       },
+//     });
 
-    if (!dbUserData[0]) {
-      res.status(404).json({ message: "No user found with this id" });
-      return;
-    }
-    res.json(dbUserData);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     if (!dbUserData[0]) {
+//       res.status(404).json({ message: "No user found with this id" });
+//       return;
+//     }
+//     res.json(dbUserData);
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 //LOGOUT
 router.post('/logout', (req, res) => {

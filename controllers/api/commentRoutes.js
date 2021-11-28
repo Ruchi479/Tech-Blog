@@ -1,23 +1,25 @@
 const router = require('express').Router();
-const { Comment, Post, User } = require('../../models');
+const { Comment, Article, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+
 
 router.get('/', async (req, res) => {
     try{
         const commentData = await Comment.findAll({
-            //join model user and post like left join
+            //join model user and Article like left join
             include: [
                 {
                     model: User,
                     attributes: ['username'],
                 },
                 {
-                    model: Post,
+                    model: Article,
                     attributes: ['username'],
                 },
             ],
             where: {
-                post_id: req.params.id,
+                article_id: req.params.id,
             },
             order: [['created_at', 'ASC']],
         });
@@ -34,6 +36,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+///api/comments/id GET COMMENT
 router.get('/:id', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.findOne({
@@ -54,7 +57,8 @@ router.get('/:id', withAuth, async (req, res) => {
     }
 });
 
-router.post('/:id', withAuth, async (req, res) => {
+//CREATE COMMENT
+router.post('/', withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
         ...req.body,
@@ -66,6 +70,8 @@ router.post('/:id', withAuth, async (req, res) => {
     }
 });
 
+
+//UPDATE COMMENT
 router.put('/:id', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.update(
@@ -90,6 +96,7 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 });
 
+// DELETE COMMENT /api/comments/id
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.destroy({

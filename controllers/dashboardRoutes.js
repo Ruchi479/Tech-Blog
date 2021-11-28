@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findAll({
+    const articleData = await Article.findAll({
       include: {
         model: User,
         attributes: ['username'],
@@ -14,10 +14,10 @@ router.get('/', withAuth, async (req, res) => {
       },
     });
 
-    const post = postData.map((post) => post.get({ plain: true }));
+    const articles = articleData.map((article) => article.get({ plain: true }));
 
     res.render('dashboard', {
-      post,
+      articles,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -26,26 +26,26 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/newPost', withAuth, async (req, res) => {
+router.get('/newArticle', withAuth, async (req, res) => {
   if (req.session.logged_in) {
-    res.render('newPost');
+    res.render('newArticle');
   } else {
-  res.redirect('/signin');
+  res.redirect('/login');
   }
 });
 
-router.get('/updatePost/:id', withAuth, async (req, res) => {  
+router.get('/updateArticle/:id', withAuth, async (req, res) => {  
   try {
-    const postData = await Article.findOne({
+    const articleData = await Article.findOne({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    const article = postData.get({ plain: true });
+    const article = articleData.get({ plain: true });
 
-    res.render('updatePost', {
+    res.render('updateArticle', {
       article,
       logged_in: req.session.logged_in,
     });
