@@ -1,16 +1,16 @@
 //import all models
 const User= require('./User');
-const Post= require('./Post');
+const Article= require('./Article');
 const Comment= require('./Comment');
 
 //create association
-//user can make many posts
-User.hasMany(Post, {
+//user can make many Articles
+User.hasMany(Article, {
     foreignKey: 'user_id'
 });
 
-//a post can only belong to one user
-Post.belongsTo(User, {
+//a Article can only belong to one user
+Article.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
@@ -19,9 +19,9 @@ Comment.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-//a particular comment can only belong to one post
-Comment.belongsTo(Post, {
-    foreignKey: 'post_id'
+//a particular comment can only belong to one Article
+Comment.belongsTo(Article, {
+    foreignKey: 'article_id'
 });
 
 //user can make many comments
@@ -29,9 +29,9 @@ User.hasMany(Comment, {
     foreignKey: 'user_id'
 });
 
-//a post has many comments
-Post.hasMany(Comment, {
-    foreignKey: 'post_id'
+//a Article has many comments
+Article.hasMany(Comment, {
+    foreignKey: 'article_id'
 });
 
-module.exports = { User, Post, Comment};
+module.exports = { User, Article, Comment};

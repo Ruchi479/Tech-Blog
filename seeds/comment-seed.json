@@ -2,26 +2,26 @@
     {
       "content": "Very Nice post",
       "user_id": 1,
-      "post_id": 1
+      "article_id": 1
     },
     {
       "content": "superb work",
       "user_id": 4,
-      "post_id": 2
+      "article_id": 2
     },
     {
       "content": "Awesome. Great work",
       "user_id": 2,
-      "post_id": 3
+      "article_id": 3
     },
     {
       "content": "Very True",
       "user_id": 3,
-      "post_id": 5
+      "article_id": 5
     },
     {
       "content": "very Well Post, Love to read",
       "user_id": 2,
-      "post_id": 4
+      "article_id": 4
     }
   ]
