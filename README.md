@@ -82,9 +82,10 @@ From the modern browser of your choice, visit:
 
 ## Links
 
-[The following is the link to application deployed on heroku:]()<br>
+* [The URL of the GitHub repository](https://github.com/Ruchi479/Tech-Blog.git)
 
-[The following is the link to the deployed code on github:](https://github.com/Ruchi479/Tech-Blog.git)
+* [The URL of application deployed on heroku]()
+
 
 
 ## Screenshots 
