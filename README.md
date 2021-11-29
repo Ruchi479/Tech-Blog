@@ -7,9 +7,9 @@ Build a CMS-style blog site similar to a Wordpress site, where developers can pu
 
 ## Table of Contents
 - [Description](#description)
-- [Acceptance Criteria](#acceptanceCriteria)
+- [Acceptance Criteria](#acceptance)
 - [Technologies](#technologies)
-- [Installation & Usage](#installation&usage)
+- [Installation & Usage](#installation)
 - [Links](#links)
 - [Screenshots](#screenshots)
 
