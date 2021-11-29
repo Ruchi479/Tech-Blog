@@ -7,14 +7,14 @@ Build a CMS-style blog site similar to a Wordpress site, where developers can pu
 
 ## Table of Contents
 - [Description](#description)
-- [Acceptance Criteria](#acceptance)
+- [Requirements](#requirements)
 - [Technologies](#technologies)
-- [Installation & Usage](#installation)
+- [Installation-Usage](#installation-usage)
 - [Links](#links)
 - [Screenshots](#screenshots)
 
 
-## Acceptance Criteria
+## Requirements
 
 1. When a user visits the site for the first time, they are presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in.
 2. When a user clicks on the homepage option, they are taken to the homepage.
@@ -50,7 +50,7 @@ Build a CMS-style blog site similar to a Wordpress site, where developers can pu
 - [NPM mysql2 Package](https://www.npmjs.com/package/mysql2)
 - [NPM connect-session-sequelize Package](https://www.npmjs.com/package/connect-session-sequelize?activeTab=versions)
 
-## Installation & Usage
+## Installation-Usage
 
 To use this app, you will need a MySQL Workbench account, and to have the app installed on your machine. Documentation with installation instructions are available [here.](https://dev.mysql.com/doc/workbench/en/wb-installing.html) 
 
