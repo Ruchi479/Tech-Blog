@@ -87,7 +87,7 @@ From the modern browser of your choice, visit:
 
 * [The URL of the GitHub repository](https://github.com/Ruchi479/Tech-Blog.git)
 
-* [The URL of application deployed on heroku]()
+* [The URL of application deployed on heroku](https://tech-blog-ruchi.herokuapp.com/)
 
 
 
