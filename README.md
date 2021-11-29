@@ -6,9 +6,10 @@ Build a CMS-style blog site similar to a Wordpress site, where developers can pu
 
 
 ## Table of Contents
-- [Acceptance Criteria](#Criteria)
-- [Technologies Used](#Technologies)
-- [Local Installation & Usage](#Local)
+- [Description](#description)
+- [Acceptance Criteria](#acceptanceCriteria)
+- [Technologies](#technologies)
+- [Installation & Usage](#installation&usage)
 - [Links](#links)
 - [Screenshots](#screenshots)
 
@@ -32,7 +33,9 @@ Build a CMS-style blog site similar to a Wordpress site, where developers can pu
 15. When a user clicks on the logout option in the navigation, they are signed out of the site.
 16. When a user is idle on the site for more than a set time, they are able to view comments but are prompted to log in again before they can add, update, or delete comments.
 
-## Technologies Used
+
+## Technologies
+
 - JavaScript
 - MySQL
 - Node.js
@@ -47,7 +50,7 @@ Build a CMS-style blog site similar to a Wordpress site, where developers can pu
 - [NPM mysql2 Package](https://www.npmjs.com/package/mysql2)
 - [NPM connect-session-sequelize Package](https://www.npmjs.com/package/connect-session-sequelize?activeTab=versions)
 
-## Local Installation & Usage
+## Installation & Usage
 
 To use this app, you will need a MySQL Workbench account, and to have the app installed on your machine. Documentation with installation instructions are available [here.](https://dev.mysql.com/doc/workbench/en/wb-installing.html) 
 
